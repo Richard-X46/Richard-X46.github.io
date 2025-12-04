@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignments Landing Page</title>
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; background: #f9f9f9; }
+    h1 { color: #c00; }
+    .assignments { margin-top: 2em; }
+    .assignment-link { display: block; margin: 1em 0; padding: 1em; background: #fff; border-radius: 8px; box-shadow: 0 2px 6px #0001; text-decoration: none; color: #333; transition: box-shadow 0.2s; }
+    .assignment-link:hover { box-shadow: 0 4px 12px #0002; background: #ffeaea; }
+  </style>
+</head>
+<body>
+  <h1>Welcome to My Assignments</h1>
+  <p>Select an assignment below to view its details. This page uses <strong>htmx</strong> for dynamic navigation.</p>
+  <div class="assignments">
+    <a class="assignment-link" href="assignment1.html" hx-get="assignment1.html" hx-target="#assignment-content" hx-swap="innerHTML">Assignment 1</a>
+    <a class="assignment-link" href="assignment2.html" hx-get="assignment2.html" hx-target="#assignment-content" hx-swap="innerHTML">Assignment 2</a>
+    <a class="assignment-link" href="assignment3.html" hx-get="assignment3.html" hx-target="#assignment-content" hx-swap="innerHTML">Assignment 3</a>
+    <a class="assignment-link" href="assignment4.html" hx-get="assignment4.html" hx-target="#assignment-content" hx-swap="innerHTML">Assignment 4</a>
+  </div>
+  <div id="assignment-content" style="margin-top:2em;"></div>
+</body>
+</html>
