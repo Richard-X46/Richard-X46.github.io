@@ -1,0 +1,41 @@
+# Streamlit Theme Configuration
+# This creates a clean, modern theme for the AI Economy Story app
+
+[theme]
+# Base theme - inherit from light theme (cannot be in .light or .dark)
+base = "light"
+
+# Font settings (cannot be in .light or .dark)
+font = "sans serif"
+
+# Light theme (default)
+primaryColor = "#1f77b4"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f8f9fa"
+textColor = "#262730"
+
+[theme.sidebar]
+# Sidebar for light theme (default)
+backgroundColor = "#f0f2f6"
+secondaryBackgroundColor = "#e6e9ef"
+
+[theme.dark]
+# Dark theme settings
+primaryColor = "#4da6ff"
+backgroundColor = "#0e1117"
+secondaryBackgroundColor = "#1a1d29"
+textColor = "#fafafa"
+
+[theme.dark.sidebar]
+# Sidebar for dark theme
+backgroundColor = "#1a1d29"
+secondaryBackgroundColor = "#262730"
+
+[server]
+# Enable file watcher for development
+enableXsrfProtection = true
+enableCORS = false
+
+[browser]
+# Browser settings
+gatherUsageStats = false

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 3: Infographic</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #f7f5f2;
+      color: #222;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #c0392b;
+      margin-bottom: 0.5rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #c0392b;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .pdf-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .pdf-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .pdf-container object {
+      width: 100%;
+      min-height: 1000px;
+      display: block;
+    }
+    .download-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #c0392b;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    .download-link:hover {
+      background: #a93226;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+    <h1>Assignment 3: Infographic</h1>
+    
+    <div class="intro" style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); line-height: 1.7;">
+      <p><strong>Wealth Inequality to Scale</strong></p>
+      <p>
+        This infographic translates the abstract concept of global wealth inequality into tangible, 
+        relatable terms. Using data from the <em>UBS Global Wealth Report 2025</em>, I visualized 
+        wealth distribution across the world's population using two metaphors:
+      </p>
+      <ul style="margin: 1rem 0; padding-left: 1.5rem; color: #444;">
+        <li><strong>Blocks</strong> — Each block represents $4.75 trillion USD and 38 million people, 
+        showing how the top 1% owns 48% of global wealth while 41% of the population shares the last block.</li>
+        <li><strong>Time</strong> — If every dollar equaled one second, $1,000 is 16 minutes (loading a dishwasher), 
+        while $1 trillion exceeds all of recorded human history at 31,709 years.</li>
+      </ul>
+      <p style="color: #666; font-size: 0.9rem;">
+        Designed in Canva with a focus on clear visual hierarchy and intuitive data comprehension.
+      </p>
+    </div>
+    
+    <div class="pdf-container">
+      <object data="Infographic.pdf" type="application/pdf">
+        <p>Your browser doesn't support embedded PDFs. <a href="Infographic.pdf">Download the infographic</a>.</p>
+      </object>
+    </div>
+    
+    <a href="Infographic.pdf" class="download-link" download>Download Infographic (PDF)</a>
+  </div>
+</body>
+</html>

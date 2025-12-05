@@ -4,25 +4,200 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assignments Landing Page</title>
-  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2em; background: #f9f9f9; }
-    h1 { color: #c00; }
-    .assignments { margin-top: 2em; }
-    .assignment-link { display: block; margin: 1em 0; padding: 1em; background: #fff; border-radius: 8px; box-shadow: 0 2px 6px #0001; text-decoration: none; color: #333; transition: box-shadow 0.2s; }
-    .assignment-link:hover { box-shadow: 0 4px 12px #0002; background: #ffeaea; }
+    :root {
+      --bg: #f7f5f2;
+      --card: #ffffff;
+      --primary: #c0392b;
+      --primary-soft: #ffe2dd;
+      --text: #222222;
+      --text-muted: #666666;
+      --radius: 12px;
+      --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 2.5rem 1.5rem;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      margin: 0 0 0.25rem;
+      font-size: 2.1rem;
+      color: var(--primary);
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .intro {
+      margin-top: 1.5rem;
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.98rem;
+    }
+
+    .assignments {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .assignment-link {
+      display: block;
+      padding: 1.1rem 1rem;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s;
+      border-left: 4px solid transparent;
+    }
+
+    .assignment-link span.label {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .assignment-link h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1.05rem;
+    }
+
+    .assignment-link p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .assignment-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 22px rgba(0, 0, 0, 0.12);
+      background: var(--primary-soft);
+      border-left-color: var(--primary);
+    }
+
+    #assignment-content {
+      margin-top: 2rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .assignment-link {
+        transition: none;
+      }
+      .assignment-link:hover {
+        transform: none;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Assignments</h1>
-  <p>Select an assignment below to view its details. This page uses <strong>htmx</strong> for dynamic navigation.</p>
-  <div class="assignments">
-    <a class="assignment-link" href="assignment1.html" hx-get="assignment1.html" hx-target="#assignment-content" hx-swap="innerHTML">Assignment 1</a>
-    <a class="assignment-link" href="assignment2.html" hx-get="assignment2.html" hx-target="#assignment-content" hx-swap="innerHTML">Assignment 2</a>
-    <a class="assignment-link" href="assignment3.html" hx-get="assignment3.html" hx-target="#assignment-content" hx-swap="innerHTML">Assignment 3</a>
-    <a class="assignment-link" href="assignment4.html" hx-get="assignment4.html" hx-target="#assignment-content" hx-swap="innerHTML">Assignment 4</a>
-    <a class="assignment-link" href="canadian-dollar-story.html">Canadian Dollar Story</a>
+  <div class="page">
+    <header>
+      <h1>Richard Pears</h1>
+      <p class="subtitle">Analyst & AI Enthusiast · Data Visualization Portfolio</p>
+      <div class="intro">
+        <p>
+          Hi, I'm an analyst and AI enthusiast with experience in analytics, data engineering, NLP, and cloud deployment.
+          Currently focused on building scalable ML apps and learning advanced Python, PyTorch, and MLOps.
+        </p>
+        <p style="margin-top: 0.75rem; margin-bottom: 0;">
+          <strong>Background:</strong> B.Tech, PGDM, and current MSc candidate at Ontario Tech<br>
+          <strong>Skills:</strong> Python, SQL, Docker, FastAPI, PyTorch, scikit-learn
+        </p>
+      </div>
+    </header>
+
+    <h2 style="margin-top: 2rem; font-size: 1.3rem; color: var(--primary);">Course Assignments</h2>
+    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+      Assignments 1–4 · Interactive & visual storytelling
+    </p>
+
+    <section class="assignments">
+      <a class="assignment-link"
+         href="canadian-dollar-story.html">
+        <span class="label">Assignment 1</span>
+        <h2>Data Storyboard (Miro)</h2>
+        <p>Storyboard for a data story, prototyped with Miro and embedded as an interactive board.</p>
+      </a>
+
+      <a class="assignment-link"
+        href="assignment2.html">
+        <span class="label">Assignment 2</span>
+        <h2>Redesigning the Nightingale Coxcomb</h2>
+        <p>Notebook-based redesign of Florence Nightingale's classic polar area chart.</p>
+      </a>
+
+      <a class="assignment-link"
+         href="assignment3.html">
+        <span class="label">Assignment 3</span>
+        <h2>Infographic</h2>
+        <p>Single-page infographic designed in Canva, focused on clear visual hierarchy.</p>
+      </a>
+
+      <a class="assignment-link"
+         href="assignment4.html">
+        <span class="label">Assignment 4</span>
+        <h2>Scrollytelling App</h2>
+        <p>Monolithic Streamlit application that walks readers through a narrative with data.</p>
+      </a>
+    </section>
+
+    <h2 style="margin-top: 2.5rem; font-size: 1.3rem; color: var(--primary);">Other Projects</h2>
+    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+      Personal projects hosted on my VPS
+    </p>
+
+    <section class="assignments">
+      <a class="assignment-link" href="https://richard-x46.me/opinion-mining" target="_blank">
+        <span class="label">NLP</span>
+        <h2>Opinion Mining App</h2>
+        <p>NLP-powered Reddit sentiment analysis tool for exploring public opinion.</p>
+      </a>
+
+      <a class="assignment-link" href="https://richard-x46.me/drt-ideahack" target="_blank">
+        <span class="label">Data Viz</span>
+        <h2>DRT Ideahack</h2>
+        <p>Interactive transit map for Durham Region Transit.</p>
+      </a>
+    </section>
+
+    <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #ddd; font-size: 0.9rem; color: var(--text-muted);">
+      <p>
+        <a href="mailto:richardpears46@gmail.com" style="color: var(--primary); text-decoration: none;">Email</a> · 
+        <a href="https://www.linkedin.com/in/40599160/" style="color: var(--primary); text-decoration: none;" target="_blank">LinkedIn</a> · 
+        <a href="https://github.com/Richard-X46" style="color: var(--primary); text-decoration: none;" target="_blank">GitHub</a>
+      </p>
+    </footer>
   </div>
-  <div id="assignment-content" style="margin-top:2em;"></div>
 </body>
 </html>
