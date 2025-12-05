@@ -7508,8 +7508,68 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration -->
+<style>
+  /* Portfolio theme overrides */
+  body.jp-Notebook {
+    background: #f7f5f2 !important;
+    padding: 2rem !important;
+    margin: 0 !important;
+  }
+  .portfolio-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .portfolio-header {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 1.5rem;
+  }
+  .portfolio-header h1 {
+    color: #c0392b;
+    margin: 0 0 0.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .portfolio-header p {
+    margin: 0.5rem 0;
+    line-height: 1.7;
+    color: #444;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #c0392b;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.9rem;
+  }
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  .notebook-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+</style>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="portfolio-container">
+  <a href="index.html" class="back-link">← Back</a>
+  <div class="portfolio-header">
+    <h1>Assignment 2: Redesigning the Nightingale Coxcomb</h1>
+    <p><strong>Notebook-based redesign of Florence Nightingale's classic polar area chart</strong></p>
+    <p>
+      This visualization redesigns Nightingale's famous 1858 "Rose Diagram" that illustrated 
+      causes of mortality during the Crimean War. The original polar area chart was revolutionary 
+      for its time — this notebook explores alternative representations of the same data.
+    </p>
+  </div>
+  <div class="notebook-content">
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=42b74c01">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7618,5 +7678,7 @@ a.anchor-link {
 </div>
 </div>
 </main>
+  </div>
+</div>
 </body>
 </html>
