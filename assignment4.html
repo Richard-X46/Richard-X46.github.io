@@ -2,14 +2,277 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assignment 4: Scrollytelling App</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #f7f5f2;
+      color: #222;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #c0392b;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      color: #c0392b;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #c0392b;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .intro {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      line-height: 1.7;
+    }
+    .intro p {
+      margin: 0.5rem 0;
+      color: #444;
+    }
+    .intro ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+      color: #444;
+    }
+    .intro li {
+      margin: 0.4rem 0;
+    }
+    .personas {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .persona-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .persona-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    .persona-card h3 {
+      margin: 0 0 0.5rem;
+      color: #c0392b;
+    }
+    .persona-card p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .boards-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .board-item {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    .board-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .board-item img:hover {
+      transform: scale(1.02);
+    }
+    .board-item p {
+      margin: 0.75rem 0 0;
+      font-size: 0.85rem;
+      color: #666;
+    }
+    .video-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin: 2rem 0;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .download-section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .download-link {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #c0392b;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .download-link:hover {
+      background: #a93226;
+    }
+    @media (max-width: 768px) {
+      .personas {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Assignment 4: Data Scrollytelling</h1>
-  <p>This assignment is a Streamlit app. Download and run the Python file locally:</p>
-  <ul>
-    <li><a href="assignment4.py">Download Streamlit App (Python)</a></li>
-  </ul>
-  <p>To run: <code>streamlit run assignment4.py</code></p>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back</a>
+    <h1>Assignment 4: The AI Divide in the GTA</h1>
+    
+    <div class="intro">
+      <p><strong>A Data Scrollytelling Experience</strong></p>
+      <p>
+        This project explores the growing economic divide created by AI adoption in the Greater Toronto Area. 
+        Through interactive visualizations and narrative storytelling, we follow two personas navigating 
+        the AI economy: <strong>Jiya Sharma</strong>, an AI engineer thriving in tech, and 
+        <strong>Chris Anderson</strong>, a logistics supervisor facing automation-driven job insecurity.
+      </p>
+      <p><strong>Key themes explored:</strong></p>
+      <ul>
+        <li>Wage gap trends between AI/tech and traditional industries</li>
+        <li>Education enrollment shifts toward AI and computer science</li>
+        <li>AI exposure and complementarity across occupations</li>
+        <li>Accessible training pathways for workers in at-risk sectors</li>
+        <li>Geographic distribution of tech vs. business programs in Canada</li>
+      </ul>
+      <p style="color: #666; font-size: 0.9rem;">
+        Built with Streamlit, Plotly, Folium, and Pandas. Data sources include Statistics Canada, 
+        AI occupational exposure indices, and provincial enrollment records.
+      </p>
+    </div>
+
+    <h2>Meet the Personas</h2>
+    <div class="personas">
+      <div class="persona-card">
+        <img src="VisualExplorers/jiya.jpg" alt="Jiya Sharma">
+        <h3>Jiya Sharma</h3>
+        <p><strong>Role:</strong> AI Engineer</p>
+        <p><strong>Education:</strong> MSc in Computer Science</p>
+        <p><strong>Situation:</strong> Secure career with growing opportunities in the AI sector. Benefits from high complementarity with AI tools.</p>
+      </div>
+      <div class="persona-card">
+        <img src="VisualExplorers/chris.jpg" alt="Chris Anderson">
+        <h3>Chris Anderson</h3>
+        <p><strong>Role:</strong> Logistics Supervisor</p>
+        <p><strong>Education:</strong> Business Management</p>
+        <p><strong>Situation:</strong> Facing job insecurity as automation replaces manual coordination. Exploring upskilling pathways to remain relevant.</p>
+      </div>
+    </div>
+
+    <h2>Story Boards & Visualizations</h2>
+    <p style="color: #666; margin-bottom: 1rem;">
+      The scrollytelling narrative is structured around key data insights visualized through interactive charts and maps:
+    </p>
+    <div class="boards-gallery">
+      <div class="board-item">
+        <img src="VisualExplorers/static/boards/board1.png" alt="Board 1">
+        <p>Geographic distribution of AI/Tech vs Business enrollment across Canada</p>
+      </div>
+      <div class="board-item">
+        <img src="VisualExplorers/static/boards/board2.png" alt="Board 2">
+        <p>Tech vs Logistics: Wage gap over time</p>
+      </div>
+      <div class="board-item">
+        <img src="VisualExplorers/static/boards/board3.png" alt="Board 3">
+        <p>Education enrollment trends: Math/CS vs Business</p>
+      </div>
+      <div class="board-item">
+        <img src="VisualExplorers/static/boards/board4.png" alt="Board 4">
+        <p>AI complementarity vs exposure by occupation</p>
+      </div>
+      <div class="board-item">
+        <img src="VisualExplorers/static/boards/board5.png" alt="Board 5">
+        <p>Upskilling pathways: Cost and duration comparison</p>
+      </div>
+      <div class="board-item">
+        <img src="VisualExplorers/static/boards/board6.png" alt="Board 6">
+        <p>Interactive Folium map: Provincial enrollment patterns</p>
+      </div>
+    </div>
+
+    <h2>Scrollytelling Video Walkthrough</h2>
+    <div class="video-container">
+      <p style="margin-bottom: 1rem; color: #444;">
+        Watch the complete scrollytelling narrative in action: a guided tour through the AI divide story.
+      </p>
+      <div class="video-wrapper" id="video-wrapper">
+        <div id="video-placeholder" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 8px;">
+          <div style="text-align: center; color: white;">
+            <svg width="80" height="80" viewBox="0 0 80 80" style="opacity: 0.9;">
+              <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+              <polygon points="32,25 32,55 55,40" fill="white"/>
+            </svg>
+            <p style="margin-top: 1rem; font-size: 1rem;">Click to load video</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('video-placeholder').addEventListener('click', function() {
+        const wrapper = document.getElementById('video-wrapper');
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://drive.google.com/file/d/1jja9T0N0NjJeUEXFGhw1_yM6s3f8RzDW/preview';
+        iframe.allow = 'autoplay';
+        iframe.style.position = 'absolute';
+        iframe.style.top = '0';
+        iframe.style.left = '0';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none';
+        wrapper.innerHTML = '';
+        wrapper.appendChild(iframe);
+      });
+    </script>
+  </div>
 </body>
 </html>
